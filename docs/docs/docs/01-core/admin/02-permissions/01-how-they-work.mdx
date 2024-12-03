@@ -11,7 +11,7 @@ The RBAC permission system relies under the hood on the [CASL](https://casl.js.o
 
 A `permission` is the combination of an `action`, a `subject`, some `properties` and some `conditions`.
 The logic is that: a user can perform an `action` on a `subject` and some of its `properties` only if it its role has the `permission` and if the `conditions` associated to the permission pass.
-The creation and edition of permissions is done through the [edit page](http://localhost:1337/admin/settings/roles/2) of a role by checking or unchecking checkboxes.
+The creation and edition of permissions is done through the [edit page](http://54.87.140.98:1337/admin/settings/roles/2) of a role by checking or unchecking checkboxes.
 
 Example 1: the action `update` can be applied on the subject `article` and property `title`, this result is the permission to update the title of an article.
 
@@ -146,7 +146,7 @@ More information on how the handler works [here](https://docs.strapi.io/develope
 
 ### Permission definition
 
-The permissions are modified in the admin panel (on the [edit page](http://localhost:1337/admin/settings/roles/2) of a role) and stored in the database with the following information:
+The permissions are modified in the admin panel (on the [edit page](http://54.87.140.98:1337/admin/settings/roles/2) of a role) and stored in the database with the following information:
 
 | key                  | description                                                                                                                | type   | required | example                                                       |
 | -------------------- | -------------------------------------------------------------------------------------------------------------------------- | ------ | -------- | ------------------------------------------------------------- |

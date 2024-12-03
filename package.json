@@ -162,5 +162,8 @@
     "node": ">=18.0.0 <=22.x.x",
     "npm": ">=6.0.0"
   },
-  "isStrapiMonorepo": true
+  "isStrapiMonorepo": true,
+  "dependencies": {
+    "pg": "^8.8.0"
+  }
 }

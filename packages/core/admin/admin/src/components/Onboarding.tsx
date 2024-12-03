@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import {
   Box,
   Button,
@@ -36,120 +35,125 @@ const Onboarding = () => {
 
   const Icon = isOpen ? Cross : Question;
 
+  // Add a flag here to control visibility
+  const showHelpButton = false; // Change this to true to show the button
+
   return (
     <Popover.Root onOpenChange={setIsOpen}>
-      <Box position="fixed" bottom={2} right={2}>
-        <Popover.Trigger>
-          <HelperButton
-            aria-label={formatMessage(
-              isOpen
-                ? {
-                    id: 'app.components.Onboarding.help.button-close',
-                    defaultMessage: 'Close help menu',
-                  }
-                : {
-                    id: 'app.components.Onboarding.help.button',
-                    defaultMessage: 'Open help menu',
-                  }
-            )}
+      {showHelpButton && (
+        <Box position="fixed" bottom={2} right={2}>
+          <Popover.Trigger>
+            <HelperButton
+              aria-label={formatMessage(
+                isOpen
+                  ? {
+                      id: 'app.components.Onboarding.help.button-close',
+                      defaultMessage: 'Close help menu',
+                    }
+                  : {
+                      id: 'app.components.Onboarding.help.button',
+                      defaultMessage: 'Open help menu',
+                    }
+              )}
+            >
+              <Icon fill="buttonNeutral0" />
+            </HelperButton>
+          </Popover.Trigger>
+        </Box>
+      )}
+      <Popover.Content align="end" side="top" sideOffset={12}>
+        <Flex
+          justifyContent="space-between"
+          paddingBottom={5}
+          paddingRight={6}
+          paddingLeft={6}
+          paddingTop={6}
+        >
+          <TypographyLineHeight fontWeight="bold">
+            {formatMessage({
+              id: 'app.components.Onboarding.title',
+              defaultMessage: 'Get started videos',
+            })}
+          </TypographyLineHeight>
+          <TextLink
+            tag="a"
+            href={WATCH_MORE.href}
+            target="_blank"
+            rel="noreferrer noopener"
+            variant="pi"
+            textColor="primary600"
           >
-            <Icon fill="buttonNeutral0" />
-          </HelperButton>
-        </Popover.Trigger>
-        <Popover.Content align="end" side="top" sideOffset={12}>
-          <Flex
-            justifyContent="space-between"
-            paddingBottom={5}
-            paddingRight={6}
+            {formatMessage(WATCH_MORE.label)}
+          </TextLink>
+        </Flex>
+        <Divider />
+        {VIDEO_LINKS.map(({ href, duration, label }, index) => (
+          <VideoLinkWrapper
+            tag="a"
+            href={href}
+            target="_blank"
+            rel="noreferrer noopener"
+            key={href}
+            hasRadius
+            paddingTop={4}
+            paddingBottom={4}
             paddingLeft={6}
-            paddingTop={6}
+            paddingRight={11}
           >
-            <TypographyLineHeight fontWeight="bold">
-              {formatMessage({
-                id: 'app.components.Onboarding.title',
-                defaultMessage: 'Get started videos',
-              })}
-            </TypographyLineHeight>
-            <TextLink
-              tag="a"
-              href={WATCH_MORE.href}
-              target="_blank"
-              rel="noreferrer noopener"
-              variant="pi"
-              textColor="primary600"
-            >
-              {formatMessage(WATCH_MORE.label)}
-            </TextLink>
-          </Flex>
-          <Divider />
-          {VIDEO_LINKS.map(({ href, duration, label }, index) => (
-            <VideoLinkWrapper
-              tag="a"
-              href={href}
-              target="_blank"
-              rel="noreferrer noopener"
-              key={href}
-              hasRadius
-              paddingTop={4}
-              paddingBottom={4}
-              paddingLeft={6}
-              paddingRight={11}
-            >
-              <Box paddingRight={5}>
-                <Number textColor="neutral200" variant="alpha">
-                  {index + 1}
-                </Number>
-              </Box>
-              <Box position="relative">
-                <Preview src={onboardingPreview} alt="" />
-                <IconWrapper
-                  position="absolute"
-                  top="50%"
-                  left="50%"
-                  background="primary600"
-                  borderRadius="50%"
-                  justifyContent="center"
-                  width={6}
-                  height={6}
-                >
-                  <Play fill="buttonNeutral0" width="12" height="12" />
-                </IconWrapper>
-              </Box>
-              <Flex direction="column" alignItems="start" paddingLeft={4}>
-                <Label fontWeight="bold">{formatMessage(label)}</Label>
-                <VisuallyHidden>:</VisuallyHidden>
-                <Typography textColor="neutral600" variant="pi">
-                  {duration}
-                </Typography>
-              </Flex>
-            </VideoLinkWrapper>
+            <Box paddingRight={5}>
+              <Number textColor="neutral200" variant="alpha">
+                {index + 1}
+              </Number>
+            </Box>
+            <Box position="relative">
+              <Preview src={onboardingPreview} alt="" />
+              <IconWrapper
+                position="absolute"
+                top="50%"
+                left="50%"
+                background="primary600"
+                borderRadius="50%"
+                justifyContent="center"
+                width={6}
+                height={6}
+              >
+                <Play fill="buttonNeutral0" width="12" height="12" />
+              </IconWrapper>
+            </Box>
+            <Flex direction="column" alignItems="start" paddingLeft={4}>
+              <Label fontWeight="bold">{formatMessage(label)}</Label>
+              <VisuallyHidden>:</VisuallyHidden>
+              <Typography textColor="neutral600" variant="pi">
+                {duration}
+              </Typography>
+            </Flex>
+          </VideoLinkWrapper>
+        ))}
+        <Flex
+          direction="column"
+          alignItems="stretch"
+          gap={2}
+          paddingLeft={5}
+          paddingTop={2}
+          paddingBottom={5}
+        >
+          {docLinks.map(({ label, href, icon: Icon }) => (
+            <Flex gap={3} key={href}>
+              <Icon fill="primary600" />
+              <TextLink
+                tag="a"
+                href={href}
+                target="_blank"
+                rel="noreferrer noopener"
+                variant="sigma"
+                textColor="primary700"
+              >
+                {formatMessage(label)}
+              </TextLink>
+            </Flex>
           ))}
-          <Flex
-            direction="column"
-            alignItems="stretch"
-            gap={2}
-            paddingLeft={5}
-            paddingTop={2}
-            paddingBottom={5}
-          >
-            {docLinks.map(({ label, href, icon: Icon }) => (
-              <Flex gap={3} key={href}>
-                <Icon fill="primary600" />
-                <TextLink
-                  tag="a"
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  variant="sigma"
-                  textColor="primary700"
-                >
-                  {formatMessage(label)}
-                </TextLink>
-              </Flex>
-            ))}
-          </Flex>
-        </Popover.Content>
-      </Box>
+        </Flex>
+      </Popover.Content>
     </Popover.Root>
   );
 };

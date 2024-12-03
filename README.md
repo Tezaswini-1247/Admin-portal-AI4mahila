@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center">
   <a href="https://strapi.io/#gh-light-mode-only">
     <img src="https://strapi.io/assets/strapi-logo-dark.svg" width="318px" alt="Strapi logo" />
@@ -166,3 +167,6 @@ See for yourself what's under the hood by getting access to a [hosted Strapi pro
 ## License
 
 See the [LICENSE](./LICENSE) file for licensing information.
+=======
+# Admin-portal-AI4women
+>>>>>>> 73779a2f51c1c0f6c09d5da8836552ab255c8264

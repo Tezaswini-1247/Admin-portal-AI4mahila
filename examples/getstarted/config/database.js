@@ -1,51 +1,14 @@
-const sqlite = {
-  client: 'sqlite',
+module.exports = ({ env }) => ({
   connection: {
-    filename: '.tmp/data.db',
+    client: 'postgres',
+    connection: {
+      host: env('DATABASE_HOST', 'localhost'),
+      port: env.int('DATABASE_PORT', 5432),
+      database: env('DATABASE_NAME', 'strapi_database'),
+      user: env('DATABASE_USERNAME', 'strapi_user'),
+      password: env('DATABASE_PASSWORD', 'strapi_password'),
+      ssl: env.bool('DATABASE_SSL', false),
+    },
+    debug: false,
   },
-  useNullAsDefault: true,
-};
-
-const postgres = {
-  client: 'postgres',
-  connection: {
-    database: 'strapi',
-    user: 'strapi',
-    password: 'strapi',
-    port: 5432,
-    host: 'localhost',
-  },
-};
-
-const mysql = {
-  client: 'mysql',
-  connection: {
-    database: 'strapi',
-    user: 'strapi',
-    password: 'strapi',
-    port: 3306,
-    host: 'localhost',
-  },
-};
-
-const mariadb = {
-  client: 'mysql',
-  connection: {
-    database: 'strapi',
-    user: 'strapi',
-    password: 'strapi',
-    port: 3307,
-    host: 'localhost',
-  },
-};
-
-const db = {
-  mysql,
-  sqlite,
-  postgres,
-  mariadb,
-};
-
-module.exports = {
-  connection: process.env.DB ? db[process.env.DB] || db.sqlite : db.sqlite,
-};
+});

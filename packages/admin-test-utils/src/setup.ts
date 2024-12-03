@@ -81,7 +81,7 @@ window.console = {
  * -----------------------------------------------------------------------------------------------*/
 
 window.strapi = {
-  backendURL: 'http://localhost:1337',
+  backendURL: 'http://54.87.140.98:1337',
   isEE: false,
   features: {
     SSO: 'sso',

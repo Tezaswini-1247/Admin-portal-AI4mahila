@@ -49,7 +49,7 @@ describe('ConfigurationProvider', () => {
 
     await waitFor(() => expect(screen.queryByText('Loading content.')).not.toBeInTheDocument());
 
-    await screen.findByText('http://localhost:1337/uploads/michka.svg');
+    await screen.findByText('http://54.87.140.98:1337/uploads/michka.svg');
   });
 
   it.skip('should use the default logo and update customMenuLogo with setCustomMenuLogo', async () => {
@@ -70,6 +70,6 @@ describe('ConfigurationProvider', () => {
 
     await screen.findByText('Saved');
 
-    expect(screen.getByText('http://localhost:1337/uploads/michka.svg')).toBeInTheDocument();
+    expect(screen.getByText('http://54.87.140.98:1337/uploads/michka.svg')).toBeInTheDocument();
   });
 });

@@ -23,11 +23,6 @@
     },
     "very_long_description": {
       "type": "richtext"
-    },
-    "categories": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::category.category"
     }
   }
 }

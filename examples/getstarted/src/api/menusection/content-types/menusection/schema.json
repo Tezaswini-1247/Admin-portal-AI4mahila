@@ -22,12 +22,6 @@
       "type": "component",
       "repeatable": true,
       "required": true
-    },
-    "menu": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::menu.menu",
-      "inversedBy": "menusections"
     }
   }
 }

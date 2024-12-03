@@ -34,7 +34,13 @@
       "pluginOptions": {}
     },
     "priceRange": {
-      "enum": ["very_cheap", "cheap", "average", "expensive", "very_expensive"],
+      "enum": [
+        "very_cheap",
+        "cheap",
+        "average",
+        "expensive",
+        "very_expensive"
+      ],
       "type": "enumeration",
       "pluginOptions": {
         "i18n": {
@@ -126,11 +132,6 @@
         }
       }
     },
-    "categories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::category.category"
-    },
     "description": {
       "type": "richtext",
       "required": true,
@@ -153,12 +154,6 @@
       },
       "min": 2,
       "required": true
-    },
-    "menu": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::menu.menu",
-      "inversedBy": "restaurant"
     },
     "openingTimes": {
       "component": "default.openingtimes",
