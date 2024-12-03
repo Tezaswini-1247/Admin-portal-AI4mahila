@@ -51,7 +51,7 @@ describe('App', () => {
 
       expect(getByRole('link', { name: 'Open Documentation' })).toHaveAttribute(
         'href',
-        'http://192.168.20.14:1337/documentation/v1.0.0'
+        'http://localhost:1337/documentation/v1.0.0'
       );
 
       await user.click(getByRole('link', { name: 'Open Documentation' }));
@@ -59,7 +59,7 @@ describe('App', () => {
       versions.forEach((version) => {
         expect(getByRole('link', { name: `Open ${version}` })).toHaveAttribute(
           'href',
-          `http://192.168.20.14:1337/documentation/v${version}`
+          `http://localhost:1337/documentation/v${version}`
         );
       });
     });
