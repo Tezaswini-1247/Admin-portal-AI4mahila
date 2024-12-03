@@ -9,12 +9,12 @@ describe('urls', () => {
     });
 
     it('should return the window.location.origin if the url is not provided', () => {
-      expect(createAbsoluteUrl()).toMatchInlineSnapshot(`"http://54.87.140.98:1337"`);
+      expect(createAbsoluteUrl()).toMatchInlineSnapshot(`"http://192.168.20.14:1337"`);
     });
 
     it('should return the window.location.origin prefixed to the provided url if the url is relative', () => {
       expect(createAbsoluteUrl('/example')).toMatchInlineSnapshot(
-        `"http://54.87.140.98:1337/example"`
+        `"http://192.168.20.14:1337/example"`
       );
     });
 

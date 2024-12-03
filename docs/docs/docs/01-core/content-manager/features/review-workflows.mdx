@@ -32,10 +32,10 @@ Please refer to the [type definitions](/settings/review-workflows) for more info
 }
 ```
 
-`http://54.87.140.98:1337/content-manager/content-types` returns whether the feature is enabled for the content-type. `options.reviewWorkflows` is either `true`, `false` or `undefined`.
+`http://192.168.20.14:1337/content-manager/content-types` returns whether the feature is enabled for the content-type. `options.reviewWorkflows` is either `true`, `false` or `undefined`.
 
-**Note**: Downgrading from EE to CE won't delete the associated review workflow data and `http://54.87.140.98:1337/content-manager/content-types` still returns true. The admin app had to
-add an additional check if the feature toggle returned in `http://54.87.140.98:1337/admin/project-type` is enabled.
+**Note**: Downgrading from EE to CE won't delete the associated review workflow data and `http://192.168.20.14:1337/content-manager/content-types` still returns true. The admin app had to
+add an additional check if the feature toggle returned in `http://192.168.20.14:1337/admin/project-type` is enabled.
 
 ### Edit view
 

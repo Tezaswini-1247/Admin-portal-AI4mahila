@@ -3,7 +3,7 @@ info:
   title: Strapi i18n Plugin
   version: 1.0.0
 servers:
-  - url: http://54.87.140.98:1337
+  - url: http://192.168.20.14:1337
     description: Local server
 externalDocs:
   url: https://docs.strapi.io

@@ -3,7 +3,7 @@ import { prefixFileUrlWithBackendUrl } from '../prefixFileUrlWithBackendUrl';
 describe('prefixFileUrlWithBackendUrl', () => {
   it("should add the strapi back-end url if the file's url startsWith '/'", () => {
     const data = '/upload/test';
-    const expected = 'http://54.87.140.98:1337/upload/test';
+    const expected = 'http://192.168.20.14:1337/upload/test';
 
     expect(prefixFileUrlWithBackendUrl(data)).toEqual(expected);
   });
