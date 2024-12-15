@@ -1624,3 +1624,14 @@
 [NX Daemon Server] - 2024-12-03T11:50:22.119Z - [WATCHER]: Stopping the watcher for C:\Users\aswini.u\Desktop\strapi\strapi (sources)
 [NX Daemon Server] - 2024-12-03T11:50:22.123Z - [WATCHER]: Stopping the watcher for C:\Users\aswini.u\Desktop\strapi\strapi (outputs)
 [NX Daemon Server] - 2024-12-03T11:50:22.199Z - Server stopped because: "Stopping the daemon the set of ignored files changed (native)"
+[NX Daemon Server] - 2024-12-15T03:07:19.661Z - Started listening on: /tmp/53ea0b53a081b22fa3c4/d.sock
+[NX Daemon Server] - 2024-12-15T03:07:19.664Z - [WATCHER]: Subscribed to changes within: /home/runner/work/Admin-portal-AI4mahila/Admin-portal-AI4mahila (native)
+[NX Daemon Server] - 2024-12-15T03:07:19.666Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-12-15T03:07:19.667Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-12-15T03:07:19.673Z - [REQUEST]: Responding to the client. Shutdown initiated
+[NX Daemon Server] - 2024-12-15T03:07:19.675Z - Done responding to the client Shutdown initiated
+[NX Daemon Server] - 2024-12-15T03:07:19.675Z - Handled FORCE_SHUTDOWN. Handling time: 0. Response time: 2.
+[NX Daemon Server] - 2024-12-15T03:07:19.675Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-12-15T03:07:19.678Z - [WATCHER]: Stopping the watcher for /home/runner/work/Admin-portal-AI4mahila/Admin-portal-AI4mahila (sources)
+[NX Daemon Server] - 2024-12-15T03:07:19.678Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-12-15T03:07:19.678Z - [WATCHER]: Stopping the watcher for /home/runner/work/Admin-portal-AI4mahila/Admin-portal-AI4mahila (outputs)
